@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" 
+                Service="customerService" 
+                Factory="Castle.Facilities.WcfIntegration.DefaultServiceHostFactory, Castle.Facilities.WcfIntegration"  %>

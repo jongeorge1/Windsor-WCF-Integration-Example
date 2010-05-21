@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5FCD6BA-DD76-4E17-ADB6-46A0BA28A163}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindsorWCFIntegrationExample.Client</RootNamespace>
+    <AssemblyName>WindsorWCFIntegrationExample.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\ReferencedAssemblies\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\..\ReferencedAssemblies\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.WcfIntegration">
+      <HintPath>..\..\ReferencedAssemblies\Castle.Facilities.WcfIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel">
+      <HintPath>..\..\ReferencedAssemblies\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\ReferencedAssemblies\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Configuration\Windsor.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Configuration\WindsorWCF.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindsorWCFIntegrationExample.Core\WindsorWCFIntegrationExample.Core.csproj">
+      <Project>{6AF65259-C97A-4E2A-84CC-C56778EF478E}</Project>
+      <Name>WindsorWCFIntegrationExample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindsorWCFIntegrationExample.Endpoints\WindsorWCFIntegrationExample.Endpoints.csproj">
+      <Project>{C88ABE4F-10B8-4BB3-9469-8F414D3FD00E}</Project>
+      <Name>WindsorWCFIntegrationExample.Endpoints</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindsorWCFIntegrationExample.Infrastructure\WindsorWCFIntegrationExample.Infrastructure.csproj">
+      <Project>{23ACEE0F-5D48-4A8C-8994-3FFF89A44D17}</Project>
+      <Name>WindsorWCFIntegrationExample.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindsorWCFIntegrationExample.Tasks\WindsorWCFIntegrationExample.Tasks.csproj">
+      <Project>{4BFEB89B-BEF3-4349-A77A-A6B520BBE59F}</Project>
+      <Name>WindsorWCFIntegrationExample.Tasks</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
